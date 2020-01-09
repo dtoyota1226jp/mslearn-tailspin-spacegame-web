@@ -40,10 +40,12 @@ steps:
     projects: '**/*.csproj'
 
 - template: templates/build.yml
-  parameters: 'Debug'
+  parameters: 
+    buildConfiguration: 'Debug'
 
 - template: templates/build.yml
-  parameteres: 'Release'
+  parameters:
+    buildConfiguration: 'Release'
 
 - task: DotNetCoreCLI@2
   displayName: 'Publish the project - Release'
